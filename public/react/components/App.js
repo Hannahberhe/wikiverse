@@ -60,7 +60,7 @@ export const App = () => {
   return (
     <main>
       {showArticle ? (
-        <SinglePage wikipage={showArticle} backToList={backToList} />
+        <SinglePage  fetchPages={fetchPages}  apiURL={apiURL} wikipage={showArticle} backToList={backToList} />
       ) : isAddingArticle ? (
         <Form  />
       ) : (

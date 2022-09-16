@@ -1,10 +1,17 @@
 import React from 'react';
 import { Page } from './Page';
 
-export const SinglePage = ({wikipage, backToList , DeleteList}) => {
+export const SinglePage = ({wikipage, apiURL,fetchPages, backToList , DeleteList}) => {
 	
 	(wikipage ? console.log(wikipage) : null);
-
+async function deletePage(){
+	
+		const response = await  fetch(`${apiURL}/wiki/${wikipage.slug}`,
+	  {method: "DELETE"})
+		  const data = await response.json();
+		  fetchPages()
+		
+}
 
 	return <>
 	    <h2>{wikipage.title}</h2>
@@ -15,7 +22,7 @@ export const SinglePage = ({wikipage, backToList , DeleteList}) => {
                 
 				<button onClick={() => backToList()}>Back to Wiki List</button>
 			
-				<button onClick={() => DeleteList(wikipage.slug)}>Delete</button>
+				<button onClick={deletePage}>Delete</button>
 			
 
 
