@@ -46,7 +46,7 @@ export const App = () => {
     setIsAddingArticle(!isAddingArticle);
   }
   async  function DeleteList(slug){
-	const res = await  fetch(`${apiURL}/wiki/${slug}`,
+	const response = await  fetch(`${apiURL}/wiki/${slug}`,
 	
 {method: "DELETE"})
 	  
